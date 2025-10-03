@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PWA - Localizador</title>
+
+    <link rel="manifest" href="manifest.json" />
+
+    <link rel="icon" href="assets/icon.png" />
+  
+  <meta name="theme-color" content="#1976D2"> 
+
+  <link rel="stylesheet" href="style.css" />
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
+</head>
+<body>
+  <h1>📍 Localizador PWA</h1>
+  <p>Clique no botão abaixo para obter sua localização:</p>
+
+  <button onclick="getLocation()">Obter Localização</button>
+
+  <p id="coords"></p>
+  <p id="address"></p>
+  <div id="map"></div>
+
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <script src="app.js"></script>
+
+    <script>
+    if ("serviceWorker" in navigator) {
+      navigator.serviceWorker.register("service-worker.js");
+    }
+  </script>
+</body>
+</html>
